@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Chopper</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jszip/jszip.min.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Print Chopper</h1>
+        <div class="grid">
+            <label for="file">Upload image</label>
+            <input type="file" id="file" name="file">
+            <label for="paper-height">Paper height (mm):</label>
+            <input type="number" name="paper-height" id="paper-height" value="297">
+            <label for="paper-width">Paper width (mm):</label>
+            <input type="number" name="paper-width" id="paper-width" value="210">
+            <br>
+
+            <button onclick="swapPaperDimensions()">Swap width and height</button>
+            <label for="paper-margin">Paper margin (mm):</label>
+            <input type="number" name="paper-margin" id="paper-margin" value="5">
+
+            <label for="image-resolution">Image resolution (pixels / cm):</label>
+            <input type="number" step=0.01 name="image-resolution" id="image-resolution" value="100">
+
+            <button class="chop" onclick="main()">Chop image</button>
+            <a href="" id="download" download="papers.zip" hidden>Download images</a>
+        </div>
+
+    </main>
+    <div class="canvas-container">
+        <canvas id="main-canvas"></canvas>
+    </div>
+
+    <div id="hidden-canvases" hidden></div>
+
+    <img src="" id="source-image" hidden>
+    <script src="script.js"></script>
+</body>
+</html>
